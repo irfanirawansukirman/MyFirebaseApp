@@ -1,6 +1,7 @@
-package com.example.irfan.firebaseapp.mvvm.home;
+package com.example.irfan.firebaseapp.mvvm.home.controller;
 
 import com.example.irfan.firebaseapp.databinding.HomeActivityBinding;
+import com.example.irfan.firebaseapp.mvvm.home.viewmodel.HomeVM;
 
 import id.gits.mvvmcore.controller.GitsController;
 

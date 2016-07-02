@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import com.firebase.client.Firebase;
+
 import id.gits.mvvmcore.activity.GitsActivity;
 import id.gits.mvvmcore.controller.GitsController;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
@@ -26,6 +28,8 @@ public abstract class BaseActivity<C extends GitsController> extends GitsActivit
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
+
+        Firebase.setAndroidContext(this);
     }
 
     @Override

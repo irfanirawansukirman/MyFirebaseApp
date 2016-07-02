@@ -8,7 +8,7 @@
 
         <variable
             name="vm"
-            type="com.example.irfan.firebaseapp.mvvm.home.HomeAingRowVM" />
+            type="com.example.irfan.firebaseapp.mvvm.home.viewmodel.HomeAingRowVM" />
     </data>
 
     <LinearLayout
@@ -21,12 +21,49 @@
         android:background="@drawable/custom_round_input_chat_ain"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            android:paddingRight="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                fontPath="@string/droid_sans_font"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{vm.mSenderName}"
+                tools:text="Abdul Manan"
+                android:textSize="14sp"
+                android:textColor="@color/whiteApp"/>
+
+            <TextView
+                android:text="@{vm.mDate}"
+                fontPath="@string/droid_sans_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/whiteApp"
+                tools:text="24-07-2016"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/whiteApp"/>
+
         <TextView
             fontPath="@string/droid_sans_font"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="8dp"
-            android:text="Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet"
+            android:text="@{vm.mMessage}"
+            tools:text="Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet"
             android:textColor="@color/whiteApp"
             android:textSize="12sp"
             tools:ignore="MissingPrefix" />

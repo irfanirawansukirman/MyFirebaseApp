@@ -9,7 +9,7 @@
 
         <variable
             name="vm"
-            type="com.example.irfan.firebaseapp.mvvm.home.HomeVM" />
+            type="com.example.irfan.firebaseapp.mvvm.home.viewmodel.HomeVM" />
     </data>
 
     <RelativeLayout
@@ -56,7 +56,9 @@
             android:layout_below="@+id/toolbar"
             android:layout_above="@+id/input_home_chat"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            app:adapter="@{vm.mAdapter}"
+            app:layoutManager="@{vm.mLinearLayoutManager}"/>
 
         <LinearLayout
             android:id="@+id/input_home_chat"
@@ -78,6 +80,7 @@
                 android:paddingRight="8dp">
 
                 <EditText
+                    android:id="@+id/edTxt_home_chat"
                     fontPath="@string/droid_sans_font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

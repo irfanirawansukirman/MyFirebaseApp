@@ -1,7 +1,8 @@
-package com.example.irfan.firebaseapp.mvvm.home;
+package com.example.irfan.firebaseapp.mvvm.home.view.activity;
 
 import com.example.irfan.firebaseapp.BaseActivity;
 import com.example.irfan.firebaseapp.R;
+import com.example.irfan.firebaseapp.mvvm.home.controller.HomeController;
 
 public class HomeActivity extends BaseActivity<HomeController> {
 
