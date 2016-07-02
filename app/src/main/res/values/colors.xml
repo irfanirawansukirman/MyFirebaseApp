@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="whiteApp">#FFF</color>
+    <color name="bgBatur">#A8A8A6</color>
+    <color name="bgAing">#73B9D3</color>
 </resources>

@@ -1,18 +1,22 @@
 package com.example.irfan.firebaseapp.mvvm.home;
 
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
+import com.example.irfan.firebaseapp.BaseActivity;
 import com.example.irfan.firebaseapp.R;
 
-import id.gits.mvvmcore.activity.GitsActivity;
-
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity<HomeController> {
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_activity);
+    protected int getToolbarId() {
+        return R.id.toolbar;
+    }
+
+    @Override
+    protected int getResLayout() {
+        return R.layout.home_activity;
+    }
+
+    @Override
+    protected HomeController createController() {
+        return new HomeController();
     }
 }
