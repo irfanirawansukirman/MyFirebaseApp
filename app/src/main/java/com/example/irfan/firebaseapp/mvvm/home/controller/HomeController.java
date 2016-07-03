@@ -18,4 +18,8 @@ public class HomeController extends GitsController<HomeVM, HomeActivityBinding> 
     public void bindViewModel(HomeActivityBinding binding, HomeVM viewModel) {
         binding.setVm(viewModel);
     }
+
+    public void onDestroyListener(){
+        mViewModel.onDestroyListener();
+    }
 }

@@ -28,8 +28,6 @@ public abstract class BaseActivity<C extends GitsController> extends GitsActivit
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
-
-        Firebase.setAndroidContext(this);
     }
 
     @Override

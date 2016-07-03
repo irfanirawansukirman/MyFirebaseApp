@@ -104,6 +104,7 @@
                 android:background="?selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:padding="10dp"
+                android:onClick="@{vm.onSendChat}"
                 android:src="@mipmap/ic_viking" />
         </LinearLayout>
     </RelativeLayout>

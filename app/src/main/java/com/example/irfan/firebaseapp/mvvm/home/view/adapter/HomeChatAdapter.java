@@ -1,6 +1,8 @@
 package com.example.irfan.firebaseapp.mvvm.home.view.adapter;
 
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.Gravity;
 
 import com.example.irfan.firebaseapp.R;
 import com.example.irfan.firebaseapp.databinding.RowAingBinding;
