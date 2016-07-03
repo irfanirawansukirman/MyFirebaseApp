@@ -40,12 +40,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:text="@{vm.mSenderName}"
                     android:textColor="@color/whiteApp"
                     android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/txt_chat_date"
                     fontPath="@string/droid_sans_font"
+                    android:text="@{vm.mDate}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/whiteApp"
@@ -61,6 +63,7 @@
                 android:background="@color/whiteApp" />
 
             <TextView
+                android:text="@{vm.mMessage}"
                 android:id="@+id/txt_chat_message"
                 fontPath="@string/droid_sans_font"
                 android:layout_width="match_parent"
