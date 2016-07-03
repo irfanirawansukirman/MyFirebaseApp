@@ -24,9 +24,9 @@ android {
         exclude 'META-INF/NOTICE'
     }
 
-//    dataBinding {
-//        enabled = true;
-//    }
+    dataBinding {
+        enabled = true;
+    }
 }
 
 dependencies {

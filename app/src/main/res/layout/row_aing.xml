@@ -1,55 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/custom_round_input_chat_ain"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="4dp"
     tools:ignore="MissingPrefix">
 
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.example.irfan.firebaseapp.mvvm.home.viewmodel.HomeAingRowVM" />
+    </data>
+
     <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:paddingTop="8dp">
+        android:layout_margin="4dp"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txt_chat_nameSender"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:textColor="@color/whiteApp"
-            android:textSize="14sp"
-            fontPath="@string/droid_sans_font" />
-
-        <TextView
-            android:id="@+id/txt_chat_date"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:id="@+id/row_content_chat"
             android:layout_width="wrap_content"
-            android:textColor="@color/whiteApp"
-            android:textSize="14sp"
-            fontPath="@string/droid_sans_font" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@drawable/custom_round_input_chat_ain"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:id="@+id/txt_chat_nameSender"
+                    fontPath="@string/droid_sans_font"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/whiteApp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_chat_date"
+                    fontPath="@string/droid_sans_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/whiteApp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/whiteApp" />
+
+            <TextView
+                android:id="@+id/txt_chat_message"
+                fontPath="@string/droid_sans_font"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:textColor="@color/whiteApp"
+                android:textSize="12sp"
+                tools:ignore="MissingPrefix" />
+        </LinearLayout>
     </LinearLayout>
-
-    <View
-        android:background="@color/whiteApp"
-        android:layout_height="2px"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_width="match_parent" />
-
-    <TextView
-        android:id="@+id/txt_chat_message"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:padding="8dp"
-        android:textColor="@color/whiteApp"
-        android:textSize="12sp"
-        fontPath="@string/droid_sans_font"
-        tools:ignore="MissingPrefix"/>
-</LinearLayout>
+</layout>

@@ -11,8 +11,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.example.irfan.firebaseapp.BaseActivity;
 import com.example.irfan.firebaseapp.BaseMessage;
 import com.example.irfan.firebaseapp.R;
+import com.example.irfan.firebaseapp.mvvm.home.controller.HomeController;
 import com.example.irfan.firebaseapp.mvvm.home.model.MessageModel;
 import com.example.irfan.firebaseapp.mvvm.home.view.adapter.HomeAdapter;
 import com.firebase.client.Firebase;
@@ -25,7 +27,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class HomeActivity extends AppCompatActivity implements BaseMessage.MessageCallbacks {
+public class HomeActivity extends BaseActivity<HomeController> implements BaseMessage.MessageCallbacks {
     public Context mContext = this;
     public static final String USER_EXTRA = "USER";
     public static final String TAG = "HomeActivity";
@@ -36,70 +38,71 @@ public class HomeActivity extends AppCompatActivity implements BaseMessage.Messa
     private String mConvoId;
     private BaseMessage.MessageListener mListener;
 
-    @Bind(R.id.rec_home_chat)
-    RecyclerView mRecyclerView;
-    @Bind(R.id.toolbar)
-    Toolbar mToolbar;
-    @Bind(R.id.edTxt_home_chat)
-    EditText mTxtMessage;
+//    @Bind(R.id.rec_home_chat)
+//    RecyclerView mRecyclerView;
+//    @Bind(R.id.toolbar)
+//    Toolbar mToolbar;
+//    @Bind(R.id.edTxt_home_chat)
+//    EditText mTxtMessage;
+//
+//    @OnClick(R.id.img_chat_send)
+//    public void onSendChat(){
+//        String mMessage = mTxtMessage.getText().toString();
+//        mTxtMessage.setText("");
+//        MessageModel mMessageData = new MessageModel();
+//        mMessageData.setmDate(new Date());
+//        mMessageData.setmText(mMessage);
+//        mMessageData.setmSender("Kang Dadang");
+//        BaseMessage.saveMessage(mMessageData, mConvoId);
+//
+//        mAdapter.notifyDataSetChanged();
+//    }
 
-    @OnClick(R.id.img_chat_send)
-    public void onSendChat(){
-        String mMessage = mTxtMessage.getText().toString();
-        mTxtMessage.setText("");
-        MessageModel mMessageData = new MessageModel();
-        mMessageData.setmDate(new Date());
-        mMessageData.setmText(mMessage);
-        mMessageData.setmSender("Kang Dadang");
-        BaseMessage.saveMessage(mMessageData, mConvoId);
-
-        mAdapter.notifyDataSetChanged();
+    @Override
+    protected int getToolbarId() {
+        return R.id.toolbar;
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_activity);
-        ButterKnife.bind(this);
-        initToolbar();
-        onConfig();
-        playTheChat();
+    protected int getResLayout() {
+        return R.layout.home_activity;
+    }
+
+    @Override
+    protected HomeController createController() {
+        return new HomeController();
     }
 
     public void initToolbar(){
-        if (mToolbar!=null){
-            setSupportActionBar(mToolbar);
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-        }
-    }
-
-    public void onConfig(){
-        Firebase.setAndroidContext(mContext);
+//        if (mToolbar!=null){
+//            setSupportActionBar(mToolbar);
+//            getSupportActionBar().setDisplayShowTitleEnabled(false);
+//        }
     }
 
     public void playTheChat(){
-        mRecipient = "Kang Dadang";
-        mMessageModels = new ArrayList<>();
-        mAdapter = new HomeAdapter(mContext, mMessageModels);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setAdapter(mAdapter);
-
-        String[] ids = {"Komar", "-", "Dadang"};
-        Arrays.sort(ids);
-        mConvoId = ids[0]+ids[1]+ids[2];
-        mListener = BaseMessage.addMessageListener(mConvoId, this);
+//        mRecipient = "Kang Dadang";
+//        mMessageModels = new ArrayList<>();
+//        mAdapter = new HomeAdapter(mContext, mMessageModels);
+//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        mRecyclerView.setHasFixedSize(true);
+//        mRecyclerView.setAdapter(mAdapter);
+//
+//        String[] ids = {"Komar", "-", "Dadang"};
+//        Arrays.sort(ids);
+//        mConvoId = ids[0]+ids[1]+ids[2];
+//        mListener = BaseMessage.addMessageListener(mConvoId, this);
     }
 
     @Override
     public void onMessageAdded(MessageModel mMessageModel) {
-        mMessageModels.add(mMessageModel);
-        mAdapter.notifyDataSetChanged();
+//        mMessageModels.add(mMessageModel);
+//        mAdapter.notifyDataSetChanged();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        BaseMessage.stopProcess(mListener);
+//        BaseMessage.stopProcess(mListener);
     }
 }
