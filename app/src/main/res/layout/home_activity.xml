@@ -1,108 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteApp"
+    tools:ignore="MissingPrefix">
 
-    <data>
-
-        <import type="android.view.View" />
-
-        <variable
-            name="vm"
-            type="com.example.irfan.firebaseapp.mvvm.home.viewmodel.HomeVM" />
-    </data>
-
-    <RelativeLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/whiteApp"
-        tools:ignore="MissingPrefix">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:elevation="6dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:paddingBottom="12dp"
-                    android:paddingTop="12dp"
-                    android:src="@drawable/img_firebase" />
-
-                <TextView
-                    fontPath="@string/droid_sans_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center_vertical"
-                    android:text="MyFirebase App"
-                    android:textColor="#1a1a1a"
-                    android:textSize="16sp" />
-            </LinearLayout>
-        </android.support.v7.widget.Toolbar>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rec_home_chat"
-            android:layout_below="@+id/toolbar"
-            android:layout_above="@+id/input_home_chat"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:adapter="@{vm.mAdapter}"
-            app:layoutManager="@{vm.mLinearLayoutManager}"/>
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="6dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <LinearLayout
-            android:id="@+id/input_home_chat"
-            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:elevation="6px"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:showDividers="beginning">
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/custom_round_input_chat"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp">
-
-                <EditText
-                    android:id="@+id/edTxt_home_chat"
-                    fontPath="@string/droid_sans_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:hint="Text here"
-                    android:singleLine="true"
-                    android:textColor="#1a1a1a"
-                    android:textColorHint="#40000000"
-                    android:textSize="14sp" />
-            </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                android:background="?selectableItemBackgroundBorderless"
-                android:clickable="true"
-                android:padding="10dp"
-                android:src="@mipmap/ic_viking" />
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                android:src="@drawable/img_firebase" />
+
+            <TextView
+                fontPath="@string/droid_sans_font"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="MyFirebase App"
+                android:textColor="#1a1a1a"
+                android:textSize="16sp" />
         </LinearLayout>
-    </RelativeLayout>
-</layout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rec_home_chat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/input_home_chat"
+        android:layout_below="@+id/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/input_home_chat"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:elevation="6px"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:showDividers="beginning">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_round_input_chat"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <EditText
+                android:id="@+id/edTxt_home_chat"
+                fontPath="@string/droid_sans_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Text here"
+                android:singleLine="true"
+                android:textColor="#1a1a1a"
+                android:textColorHint="#40000000"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_chat_send"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="?selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:padding="10dp"
+            android:src="@mipmap/ic_viking" />
+    </LinearLayout>
+</RelativeLayout>

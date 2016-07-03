@@ -7,5 +7,5 @@ public class Constant {
     public static final String FIREBASE_BASE = "https://myfirebaseapp-d6634.firebaseio.com/";
 
     //date format
-    public static final String FORMAT_DATE = "dd-MM-YYYY";
+    public static final String FORMAT_DATE = "yyyyMMddmmss";
 }
